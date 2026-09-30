@@ -20,10 +20,26 @@ public class TransacaoJpa {
     private OffsetDateTime dataHora;
 
 
-    protected TransacaoJpa() {}
+    public TransacaoJpa() {}
 
     public TransacaoJpa(BigDecimal valor, OffsetDateTime dataHora) {
         this.valor = valor;
         this.dataHora = dataHora;
+    }
+
+    public OffsetDateTime getDataHora() {
+        return dataHora;
+    }
+
+    public void setDataHora(OffsetDateTime dataHora) {
+        this.dataHora = dataHora;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
     }
 }
