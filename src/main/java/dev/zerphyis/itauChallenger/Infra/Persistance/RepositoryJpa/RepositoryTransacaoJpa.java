@@ -10,8 +10,8 @@ import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.UUID;
 
-public interface RepositoryTransacaoJpa extends JpaRepository<Transacao, UUID> {
-    @Query("SELECT t FROM TransacaoEntity t WHERE t.dataHora >= :limite")
+public interface RepositoryTransacaoJpa extends JpaRepository<TransacaoJpa, UUID> {
+    @Query("SELECT t FROM TransacaoJpa t WHERE t.dataHora >= :limite")
     List<TransacaoJpa> findByDataHoraAfter(@Param("limite") OffsetDateTime limite);
 
 }
