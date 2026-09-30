@@ -1,16 +1,24 @@
 package dev.zerphyis.itauChallenger.Application.UseCase;
 
 import dev.zerphyis.itauChallenger.Application.Dto.EstatisticasResponse;
+import dev.zerphyis.itauChallenger.Application.InterfaceCase.CalcularEstatisticasInterfaceCase;
+import dev.zerphyis.itauChallenger.Application.InterfaceCase.CriarTransacaoInterfaceCase;
+import dev.zerphyis.itauChallenger.Application.InterfaceCase.LimparTransacaoInterfaceCase;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
 public class TransacaoService {
-    private final CriarTransacaoUsecase criarTransacaoUsecase;
-    private final LimparTransacaoUseCase limparTransacaoUseCase;
-    private final  CalcularEstatisticasUseCase calcularEstatisticasUseCase;
 
-    public TransacaoService(CriarTransacaoUsecase criarTransacaoUsecase, LimparTransacaoUseCase limparTransacaoUseCase, CalcularEstatisticasUseCase calcularEstatisticasUseCase) {
+    private final CriarTransacaoInterfaceCase criarTransacaoUsecase;
+    private final LimparTransacaoInterfaceCase limparTransacaoUseCase;
+    private final CalcularEstatisticasInterfaceCase calcularEstatisticasUseCase;
+
+    public TransacaoService(
+            CriarTransacaoInterfaceCase criarTransacaoUsecase,
+            LimparTransacaoInterfaceCase limparTransacaoUseCase,
+            CalcularEstatisticasInterfaceCase calcularEstatisticasUseCase) {
+
         this.criarTransacaoUsecase = criarTransacaoUsecase;
         this.limparTransacaoUseCase = limparTransacaoUseCase;
         this.calcularEstatisticasUseCase = calcularEstatisticasUseCase;
