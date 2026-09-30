@@ -31,12 +31,12 @@ public class UseCaseConfig {
 
     @Bean
     public TransacaoService transacaoServiceFacade(
-            CalcularEstatisticasUseCase calcularEstatisticasUseCase,
-            CriarTransacaoUsecase criarTransacaoUseCase,
-            LimparTransacaoUseCase limparTransacaoUseCase
+            CalcularEstatisticasInterfaceCase calcularEstatisticasUseCase,
+            CriarTransacaoInterfaceCase criarTransacaoUseCase,
+            LimparTransacaoInterfaceCase limparTransacaoUseCase
     ) {
         return new TransacaoService(
-              criarTransacaoUseCase,
+                criarTransacaoUseCase,
                 limparTransacaoUseCase,
                 calcularEstatisticasUseCase
         );
