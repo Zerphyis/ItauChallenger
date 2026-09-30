@@ -15,7 +15,7 @@ public class CalcularEstatisticasUseCase implements CalcularEstatisticasInterfac
         this.repository = repository;
     }
 
-
+    @Override
     public EstatisticasResponse executar() {
         List<Transacao> transacoes = repository.buscarUltimos60Segundos();
 
@@ -24,7 +24,7 @@ public class CalcularEstatisticasUseCase implements CalcularEstatisticasInterfac
         }
 
         DoubleSummaryStatistics stats = transacoes.stream()
-                .mapToDouble(Transacao::getValor)
+                .mapToDouble(t -> t.getValor().doubleValue())
                 .summaryStatistics();
 
         return new EstatisticasResponse(
