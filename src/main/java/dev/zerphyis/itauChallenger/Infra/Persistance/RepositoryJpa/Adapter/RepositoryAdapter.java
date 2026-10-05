@@ -37,9 +37,9 @@ public class RepositoryAdapter implements RepositoryTransacao {
     public List<Transacao> buscarUltimos60Segundos() {
         OffsetDateTime limite = OffsetDateTime.now().minusSeconds(60);
 
-        List<TransacaoJpa> jpaList = jpaRepository.findByDataHoraAfter(limite);
-
-        return jpaList.stream()
+        return jpaRepository.findAll().stream()
+                .filter(jpa -> jpa.getDataHora() != null &&
+                        (jpa.getDataHora().isAfter(limite) || jpa.getDataHora().isEqual(limite)))
                 .map(jpa -> new Transacao(jpa.getValor(), jpa.getDataHora()))
                 .collect(Collectors.toList());
     }
