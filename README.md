@@ -171,7 +171,7 @@ curl -X GET http://localhost:8080/estatistica
 
 ---
 
-## 🧪 Estratégia de Testes
+##  Estratégia de Testes
 
 O projeto conta com uma suíte de testes focada em garantir a corretude das regras de negócio e a estabilidade da aplicação:
 
